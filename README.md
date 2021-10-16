@@ -1,18 +1,14 @@
 # HWK3_PasswordGenerator
 
-##User Story
-AS AN employee with access to sensitive data
-I WANT to randomly generate a password that meets certain criteria
-SO THAT I can create a strong password that provides greater security
+## User Story
+This application provides users with a way to randomly create a password that meets certain criteria with just a click of the 'Generate Password' button. 
 
-##Requirements
-  1. Click button to generate a password > presented a series of prompts for password criteria
-  2. Prompt for password critera > options to select which criteria to inclue in the password
-  3. Prompt for lenght of the password > Ability to change a length of 8-128 characters
-  4. Ask for character types to include in the password > confirm whether or not to include lowercase, uppercase, numeric and/or special characters. 
-  5. Answer each prompt > input should be validated and at least one character type should be selected
-  6. After all prompts are answered > a password is generated that matches the selected criteria. 
-  7. When password is generated > password is either displayed in an alet or written to the page. 
+## Specification Options
+The application provides several different customization options for the generated password. The password can include: lowercase, uppercase, numbers and/or special characters. The length of the password can be chosen, as well - allowing a length any where between 8 and 128 characters. 
 
 
 The password generator can be found at the link here: https://kvs1995.github.io/HWK3_PasswordGenerator/.
+
+Below is an example of the functionality of the password generator. Enjoy!
+
+![A user clicks the generate password button that triggers prompts for the user to answer and specify how the password will be built. The end result provides a new password matching the specifications in the text area.](./assets/images/PasswordGenerator.gif)
