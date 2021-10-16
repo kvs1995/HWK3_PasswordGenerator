@@ -27,7 +27,7 @@ var criteria = {
 };
 
 
-console.log(criteria.length);
+// console.log(criteria.length);
 //confirm you can change the object value
   // criteria.length = 9;
   // console.log(criteria.length) 
@@ -51,10 +51,24 @@ var characters = {
   }
 };
 
-characters.lowercase()
-characters.uppercase()
-characters.numeric()
-characters.specialCharacters()
+// characters.lowercase()
+// characters.uppercase()
+// characters.numeric()
+// characters.specialCharacters()
+
+var password = "";
+console.log(password)
 
 
-
+function generatePassword() {
+  //on click, begin with confirms on whether they would like certain criteria
+  criteria.length = prompt("Please specify a password length (Min: 8, Max: 128). If this not specified, the default length will be 8 characters.")
+  //if they do not enter any values, default the password length to 8.
+  if (criteria.length === "") {
+    criteria.length = 8;
+  }
+  if (typeof criteria.length == "string") {
+    criteria.length = prompt("Please specify a numeric value between 8 and 128 for the password length.")
+  }
+  console.log(criteria.length)
+}
