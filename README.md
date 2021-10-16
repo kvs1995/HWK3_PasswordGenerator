@@ -13,3 +13,6 @@ SO THAT I can create a strong password that provides greater security
   5. Answer each prompt > input should be validated and at least one character type should be selected
   6. After all prompts are answered > a password is generated that matches the selected criteria. 
   7. When password is generated > password is either displayed in an alet or written to the page. 
+
+
+The password generator can be found at the link here: https://kvs1995.github.io/HWK3_PasswordGenerator/.
