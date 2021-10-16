@@ -15,10 +15,10 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 
-//Generate Password Function
-  //
+//Generate Password Function Parts
+  //(1) STORE criteria in an object all together
 
-var test = {
+var criteria = {
   length: 8,
   lowercase: false,
   uppercase: false,
@@ -26,7 +26,35 @@ var test = {
   specialCharacters: false   
 };
 
-console.log(test.length)
 
-test.length = 9;
-console.log(test.length)
+console.log(criteria.length);
+//confirm you can change the object value
+  // criteria.length = 9;
+  // console.log(criteria.length) 
+
+
+//CREATE array that the generator will choose from for alphabet, numeric and special characters
+var specialCharactersList = "!#$%&()*+,-./:;<=>?@[]^_{|}~".split("")
+var characters = {
+  lowercase: function () {
+    console.log(Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 1));
+  },
+  uppercase: function () {
+    console.log((Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 1)).toUpperCase());
+  },
+  numeric: function () {
+    console.log(Math.floor(Math.random() * 9));
+  },
+  specialCharacters: function () {
+
+    console.log(specialCharactersList[Math.floor(Math.random() * 28)]);
+  }
+};
+
+characters.lowercase()
+characters.uppercase()
+characters.numeric()
+characters.specialCharacters()
+
+
+
