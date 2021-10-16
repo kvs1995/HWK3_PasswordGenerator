@@ -64,12 +64,12 @@ function generatePassword() {
   //on click, begin with confirms on whether they would like certain criteria
 
   //PASSWORD LENGTH/////////////////////////////////////////////////////////////////////////
-  criteria.length = prompt("Please specify a password length (Min: 8, Max: 128). If this not specified, the default length will be 8 characters.")
+  criteria.length = parseInt(prompt("Please specify a password length (Min: 8, Max: 128). If this not specified, the default length will be 8 characters.","8"))
   //if they do not enter any values, default the password length to 8.
   if (criteria.length === "") {
     criteria.length = 8;
   }
-  if (typeof criteria.length == "string") {
+  if (isNaN(parseInt(criteria.length)) === true) {
     criteria.length = prompt("Please specify a numeric value between 8 and 128 for the password length.")
   }
   if (criteria.length < 8 || criteria.length > 128) {
@@ -79,17 +79,23 @@ function generatePassword() {
 
   //CHARACTERS/////////////////////////////////////////////////////////////////////////
   alert("The following prompts will be used to determine the different character types included in your new password. At least one character type must be selected.")
-  criteria.lowercase = confirm("Would you like to include lowercase alphabetic characters?")
-  console.log(criteria.lowercase)
+  // var charTypeSelected = 0
+  for (var i = 0; i === 0;) {
+    criteria.lowercase = confirm("Would you like to include lowercase alphabetic characters?")
+    console.log(criteria.lowercase)
+    criteria.uppercase = confirm("Would you like to include uppercase alphabetic characters?")
+    console.log(criteria.uppercase)
+    criteria.numeric = confirm("Would you like to include numerical characters?")
+    console.log(criteria.numeric)
+    criteria.specialCharacters = confirm("Would you like to include special characters?")
+    console.log(criteria.specialCharacters)
+    if (criteria.lowercase == true || criteria.uppercase == true || criteria.numeric == true || criteria.specialCharacters == true) {
+      i=1;
+    } else {
+      alert("At least one character type must be selected. Please click 'OK' to select one of the following character types.")
+    }
+  }
 
-  criteria.uppercase = confirm("Would you like to include uppercase alphabetic characters?")
-  console.log(criteria.uppercase)
-
-  criteria.numeric = confirm("Would you like to include numerical characters?")
-  console.log(criteria.numeric)
-
-  criteria.specialCharacters = confirm("Would you like to include special characters?")
-  console.log(criteria.specialCharacters)
 
 
 
