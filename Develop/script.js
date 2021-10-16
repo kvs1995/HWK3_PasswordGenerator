@@ -37,27 +37,35 @@ var criteria = {
 var specialCharactersList = "!#$%&()*+,-./:;<=>?@[]^_{|}~".split("")
 var characters = {
   lowercase: function () {
-    console.log(Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 1));
+    var character = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 1)
+    return character
+    // console.log(Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 1));
   },
   uppercase: function () {
-    console.log((Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 1)).toUpperCase());
+    var character = (Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 1)).toUpperCase()
+    return character
+    // console.log((Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 1)).toUpperCase());
   },
   numeric: function () {
-    console.log(Math.floor(Math.random() * 9));
+    var character = Math.floor(Math.random() * 9)
+    return character
+    // console.log(Math.floor(Math.random() * 9));
   },
   specialCharacters: function () {
-
-    console.log(specialCharactersList[Math.floor(Math.random() * 28)]);
+    var character = specialCharactersList[Math.floor(Math.random() * 28)]
+    return character
+    // console.log(specialCharactersList[Math.floor(Math.random() * 28)]);
   }
 };
+// var characterType = ["characters.lowercase","characters.uppercase","characters.numeric","characters.specialCharacters"]
 
 // characters.lowercase()
 // characters.uppercase()
 // characters.numeric()
 // characters.specialCharacters()
 
-var password = "";
-console.log(password)
+// var charBank = "";
+// console.log(charBank)
 
 
 function generatePassword() {
@@ -79,7 +87,10 @@ function generatePassword() {
 
   //CHARACTERS/////////////////////////////////////////////////////////////////////////
   alert("The following prompts will be used to determine the different character types included in your new password. At least one character type must be selected.")
-  // var charTypeSelected = 0
+
+  //if every character type in the criteria object is still set to false then alert that they need to select one and loop back through. 
+  //Once there is at least 1 character type = true, the loop will end
+
   for (var i = 0; i === 0;) {
     criteria.lowercase = confirm("Would you like to include lowercase alphabetic characters?")
     console.log(criteria.lowercase)
@@ -96,6 +107,41 @@ function generatePassword() {
     }
   }
 
+  var charBank = "";
+
+
+  // var stringlength = 0;
+
+  // if the counter is less than the length of the password. 
+  for (var i = 0; i < criteria.length;) {
+    if (criteria.lowercase == true) {
+      charBank = charBank + characters.lowercase()
+      i++
+      // console.log(charBank)
+      // console.log(i);
+    }
+    if (criteria.uppercase == true && i < criteria.length) {
+      charBank = charBank + characters.uppercase()
+      i++
+      // console.log(charBank)
+      // console.log(i);
+    }
+    if (criteria.numeric == true && i < criteria.length) {
+      charBank = charBank + characters.numeric()
+      i++
+      // console.log(charBank)
+      // console.log(i);
+    }
+    if (criteria.specialCharacters == true && i < criteria.length) {
+      charBank = charBank + characters.specialCharacters()
+      i++
+      // console.log(charBank)
+      // console.log(i);
+    }
+  }
+
+  
+  console.log(charBank)
 
 
 
