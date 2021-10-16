@@ -116,25 +116,25 @@ function generatePassword() {
   for (var i = 0; i < criteria.length;) {
     if (criteria.lowercase == true) {
       charBank = charBank + characters.lowercase()
-      i++
+      i++;
       // console.log(charBank)
       // console.log(i);
     }
     if (criteria.uppercase == true && i < criteria.length) {
       charBank = charBank + characters.uppercase()
-      i++
+      i++;
       // console.log(charBank)
       // console.log(i);
     }
     if (criteria.numeric == true && i < criteria.length) {
       charBank = charBank + characters.numeric()
-      i++
+      i++;
       // console.log(charBank)
       // console.log(i);
     }
     if (criteria.specialCharacters == true && i < criteria.length) {
       charBank = charBank + characters.specialCharacters()
-      i++
+      i++;
       // console.log(charBank)
       // console.log(i);
     }
