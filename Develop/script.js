@@ -62,6 +62,8 @@ console.log(password)
 
 function generatePassword() {
   //on click, begin with confirms on whether they would like certain criteria
+
+  //PASSWORD LENGTH/////////////////////////////////////////////////////////////////////////
   criteria.length = prompt("Please specify a password length (Min: 8, Max: 128). If this not specified, the default length will be 8 characters.")
   //if they do not enter any values, default the password length to 8.
   if (criteria.length === "") {
@@ -70,5 +72,26 @@ function generatePassword() {
   if (typeof criteria.length == "string") {
     criteria.length = prompt("Please specify a numeric value between 8 and 128 for the password length.")
   }
+  if (criteria.length < 8 || criteria.length > 128) {
+    criteria.length = prompt("The length specified is outside the range allowed. Please choose a password length between 8 and 128 characters:")
+  }
   console.log(criteria.length)
+
+  //CHARACTERS/////////////////////////////////////////////////////////////////////////
+  alert("The following prompts will be used to determine the different character types included in your new password. At least one character type must be selected.")
+  criteria.lowercase = confirm("Would you like to include lowercase alphabetic characters?")
+  console.log(criteria.lowercase)
+
+  criteria.uppercase = confirm("Would you like to include uppercase alphabetic characters?")
+  console.log(criteria.uppercase)
+
+  criteria.numeric = confirm("Would you like to include numerical characters?")
+  console.log(criteria.numeric)
+
+  criteria.specialCharacters = confirm("Would you like to include special characters?")
+  console.log(criteria.specialCharacters)
+
+
+
+
 }
