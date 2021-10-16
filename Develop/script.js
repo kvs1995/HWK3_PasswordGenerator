@@ -143,7 +143,17 @@ function generatePassword() {
   
   console.log(charBank)
 
-
-
-
+  splitPass = charBank.split("")
+  
+  for (var i = splitPass.length -  1; i > 0; i--) {
+    var random = Math.floor(Math.random() * (i + 1))
+    var switchChar = splitPass[i]
+    splitPass[i] = splitPass[random]
+    splitPass[random] = switchChar;
+  }
+  console.log(splitPass)
+  // password = passwordShuffle(charBank);
+  // console.log(password)
+  password = splitPass.join("");
+  return password
 }
